@@ -31,6 +31,5 @@ func _on_Button_pressed():
 func _on_Close_pressed():
 	serial_port.close_port()
 
-
 func _on_Write_pressed():
-	serial_port.write_text("Oi")
+	serial_port.write_text("Hello Arduino!\n")
