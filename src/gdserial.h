@@ -1,7 +1,7 @@
 #ifndef GDSERIAL_H
 #define GDSERIAL_H
-#define PLATFORM_LINUX 1
-
+//#define PLATFORM_LINUX 1
+//#define LOG 1
 #include <Godot.hpp>
 #include <Sprite.hpp>
 
@@ -15,6 +15,8 @@ private:
 
 #if PLATFORM_LINUX || PLATFORM_MAC
 	int serial_port;
+#else
+	void * handler;
 #endif
 
 public:
