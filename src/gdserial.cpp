@@ -26,12 +26,11 @@ GDSerial::GDSerial() {
 }
 
 GDSerial::~GDSerial() {
-    // add your cleanup here
+
 }
 
 void GDSerial::_init() {
-    // initialize any variables here
-    time_passed = 0.0;
+
 }
 
 bool GDSerial::open_port(String port, int baud_rate) {

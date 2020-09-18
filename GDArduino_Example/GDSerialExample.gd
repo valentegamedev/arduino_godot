@@ -1,17 +1,12 @@
 extends Sprite
 
-
 const serial_res = preload("res://bin/gdserial.gdns")
 onready var serial_port = serial_res.new()
-var started = false
+var is_port_open = false
 var intext = ""
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 func _process(delta):
-	if started:
+	if is_port_open:
 		var t = serial_port.read_text()
 		if t.length() > 0:
 			for c in t:
@@ -26,9 +21,10 @@ func trigger_text_received(text):
 
 func _on_Button_pressed():
 	print(serial_port.open_port("COM7", 9600))
-	started = true
+	is_port_open = true
 
 func _on_Close_pressed():
+	is_port_open = false
 	serial_port.close_port()
 
 func _on_Write_pressed():

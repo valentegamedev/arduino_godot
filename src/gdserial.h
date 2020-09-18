@@ -1,17 +1,14 @@
 #ifndef GDSERIAL_H
 #define GDSERIAL_H
 //#define PLATFORM_LINUX 1
-//#define LOG 1
+//#define PLATFORM_MAC 1
+//#define DEBUG_LOG 1
 #include <Godot.hpp>
-#include <Sprite.hpp>
 
 namespace godot {
 
-class GDSerial : public Sprite {
-    GODOT_CLASS(GDSerial, Sprite)
-
-private:
-    float time_passed;
+class GDSerial : public Reference {
+    GODOT_CLASS(GDSerial, Reference)
 
 #if PLATFORM_LINUX || PLATFORM_MAC
 	int serial_port;
